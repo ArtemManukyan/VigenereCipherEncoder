@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vigenere Cipher Encoder / Decoder</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js"></script>
+</head>
+<body>
+	<main>
+		<a href="#encode" class="operation" id="encode-b">encode</a> <a href="#decode" class="operation" id="decode-b">decode</a><br>
+
+		<form id="encode-c" hidden>
+			<label for="key">Key</label> <label for="alphabet">Alphabet</label><br>
+			<input type="text" name="key" placeholder="Enter a symbolic key">
+			<select name="alphabet">
+				<option value="">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890</option>
+				<option value="">ABCDEFGHIJKLMNOPQRSTUVWXYZ</option>
+				<option value="">abcdefghijklmnopqrstuvwxyz</option>
+			</select><br>
+			<textarea placeholder="Message to encode..."></textarea><br>
+			<button>Encode it!</button>
+		</form>
+
+		<form id="decode-c" hidden>
+			<label for="key">Key</label> <label for="alphabet">Alphabet</label><br>
+			<input type="text" name="key" placeholder="Enter a symbolic key">
+			<select name="alphabet">
+				<option value="">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890</option>
+				<option value="">ABCDEFGHIJKLMNOPQRSTUVWXYZ</option>
+				<option value="">abcdefghijklmnopqrstuvwxyz</option>
+			</select><br>
+			<textarea placeholder="Message to decode..."></textarea><br>
+			<button>Decode it!</button>
+		</form>
+
+		<div id="output" hidden>
+			<hr>
+			<h2>Output result</h2>
+			<pre id="output-value"></pre>
+		</div>
+
+		<hr>
+
+		<h1>What is it, really?</h1>
+		<p>The Vigenère cipher is a method of encrypting alphabetic text by using a series of interwoven Caesar ciphers based on the letters of a keyword. It is a form of polyalphabetic substitution. You can read more about it on <a href="https://en.wikipedia.org/wiki/Vigenère_cipher" target="_blank">Wikipedia</a>. In this simple app you can encode some text, using this method or decode it back.</p>
+		<p>The "Key" is a word or range of symbols to be used in encoding. The "Alphabet" is a range of symbols that can be used in encoding. Initially, you can use the upper- and lowercase symbols of English alphabet and numbers, special symbols will be leaved "as is". You can also change the "Alphabet" option to uppercase or lowercase letters, but only if your text does not contain another kinds of symbols.</p> 
+		<p>Type the initial or encoded text into the text field, click "Encode it!" (or "Decode it!") and you'll get your result.</p>
+	</main>
+</body>
+</html>

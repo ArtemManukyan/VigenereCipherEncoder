@@ -1,0 +1,151 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+*[hidden] {
+	display: none;
+}
+
+body {
+	background: #8FA4BF;
+	font-family: monospace;
+	font-size: 15px;
+}
+
+main {
+	width: 700px;
+	/*height: 50%;*/
+	background: #D5E2F2;
+	border: 1px solid #736E65;
+	box-shadow: 0 0 3px #736E65;
+	/*position: absolute;*/
+	/*transform: translate(50%, 50%);*/
+	margin: 100px auto;
+	padding: 30px 20px;
+	text-align: center;
+	/*border-radius: 10px;*/
+}
+
+.operation {
+	font-size: 30px;
+	text-transform: capitalize;
+	text-decoration: none;
+	color: #333B40;
+}
+
+a.operations:focus {
+	outline: none;
+}
+
+a.operations:active {
+	outline: none;
+}
+
+.operation:visited {
+	color: #333B40;
+}
+
+.operation + .operation {
+	margin-left: 80px;
+}
+
+.operation.chosen {
+	border-bottom: 3px solid #8FA4BF;
+}
+
+form {
+	margin-top: 40px;	
+}
+
+label + label {
+	margin-left: 23%;
+}
+
+input[type="text"] {
+	padding: 10px;
+	height: 32px;
+	width: calc(30% - 7px);
+	border: 1px solid #736E65;
+	font-size: .8em;
+}
+
+select {
+	margin-top: 10px;
+	height: 32px;
+	border-radius: 0;
+	padding: 5px;
+	color: #999999;
+	width: calc(30% - 7px);
+	border: 1px solid #736E65;
+	margin-left: 5px;
+	-webkit-padding-start: 10px;
+	-webkit-padding-end: 5%;
+	-webkit-appearance: button;
+	background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 94% 50%, #fff;
+	background: -moz-linear-gradient(#fff, #fff);
+}
+
+option {
+	padding-left: 30px;
+	font-size: .8em;
+	color: #999999;
+}
+
+textarea {
+	margin-top: 13px;
+	width: 60%;
+	height: 200px;
+	min-width: 60%;
+	min-height: 200px;
+	max-width: 85%;
+	max-height: 500px;
+	font-size: .8em;
+	padding: 10px;
+	border: 1px solid #736E65;
+}
+
+button {
+	padding: 5px 20px;
+	border: 1px solid #333B40;
+	background: #736E65;
+	color: #fff;
+	height: 35px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+button:hover {
+	background: #ADC5D9;
+}
+
+hr {
+	margin: 40px;
+	background: #ADC5D9;
+}
+
+#output {
+	margin-top: 10px;
+	overflow-x: scroll;
+}
+
+#output-value {
+}
+
+h1 {
+	font-size: 1.7em;
+	color: #333B40;
+	margin-bottom: 15px;
+}
+
+h2 {
+	margin-bottom: 20px;
+}
+
+p {
+	color: #736E65;
+	line-height: 1.6em;
+	width: 80%;
+	margin: 10px auto;
+}

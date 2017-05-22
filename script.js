@@ -35,11 +35,11 @@ window.onload = function() {
 		// We should check if fields are empty or contain unacceptible values
 
 		var unacceptableKey = new RegExp('[^' + abc + ']');
-		if (str === "") {
+		if (str === '') {
 			alert('Hey, what shold I encode / decode?');
 			return;
 		}
-		if (key === "" || key.search(unacceptableKey) !== -1) {
+		if (key === '' || key.search(unacceptableKey) !== -1) {
 			alert('Sorry, but the "Key" field should be filled and contain only values from the "Alphabet" field');
 			return;
 		}
@@ -48,20 +48,22 @@ window.onload = function() {
 
 		outputVal.innerHTML = coder(str, key, abc, operation);
 
-		if (outputVal.innerHTML)
-			outputVal.parentNode.removeAttribute('hidden');
-		else
-			outputVal.parentNode.setAttribute('hidden', 'true');
+		if (outputVal.innerHTML) outputVal.parentNode.removeAttribute('hidden');
+		else outputVal.parentNode.setAttribute('hidden', 'true');
+		bgHeight();
 	});
 
 	// And let's also make a cool background
 
 	var mainContent = document.getElementById('background');
-	mainContent.style.height = document.getElementsByTagName('main')[0].offsetHeight + 200 + 'px';
+	function bgHeight() {
+		mainContent.style.height = document.getElementsByTagName('main')[0].offsetHeight + 200 + 'px';
+	}
+	bgHeight();
 	setInterval(function() {
 		var text = '';
-		for (var i = 0; i < 80; i++) {
-			for (var j = 0; j < 10; j++) {
+		for (var i = 0; i < 300; i++) {
+			for (var j = 0; j < 5; j++) {
 				text += String(Math.random()).substr(2, 14);
 			}
 		}

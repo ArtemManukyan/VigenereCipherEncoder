@@ -16,6 +16,7 @@ window.onload = function() {
 		unchosen.classList.remove('chosen');
 		document.getElementById(chosen.id.replace(/b$/, 'c')).removeAttribute('hidden');
 		document.getElementById(unchosen.id.replace(/b$/, 'c')).setAttribute('hidden', 'true');
+		document.getElementById('output').setAttribute('hidden', 'true');
 	}
 
 	document.getElementById('encode-b').addEventListener('click', changeFunction);
@@ -30,12 +31,42 @@ window.onload = function() {
 		var key = e.target.querySelector('input[type="text"]').value;
 		var abc = e.target.querySelector('select')[e.target.querySelector('select').selectedIndex].innerHTML;
 		var operation = e.target.id === 'encode-c' ? 'encode' : 'decode';
+
+		// We should check if fields are empty or contain unacceptible values
+
+		var unacceptableKey = new RegExp('[^' + abc + ']');
+		if (str === "") {
+			alert('Hey, what shold I encode / decode?');
+			return;
+		}
+		if (key === "" || key.search(unacceptableKey) !== -1) {
+			alert('Sorry, but the "Key" field should be filled and contain only values from the "Alphabet" field');
+			return;
+		}
+
+		// Now we can get the value and put it to the output field
+
 		outputVal.innerHTML = coder(str, key, abc, operation);
+
 		if (outputVal.innerHTML)
 			outputVal.parentNode.removeAttribute('hidden');
 		else
 			outputVal.parentNode.setAttribute('hidden', 'true');
 	});
+
+	// And let's also make a cool background
+
+	var mainContent = document.getElementById('background');
+	mainContent.style.height = document.getElementsByTagName('main')[0].offsetHeight + 200 + 'px';
+	setInterval(function() {
+		var text = '';
+		for (var i = 0; i < 80; i++) {
+			for (var j = 0; j < 10; j++) {
+				text += String(Math.random()).substr(2, 14);
+			}
+		}
+		mainContent.innerHTML = text;
+	}, 300);
 
 }
 

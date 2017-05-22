@@ -4,7 +4,9 @@ The Vigenère cipher is a method of encrypting alphabetic text by using a series
 
 This simple web app was made "just for fun", but unlike most of things that I do "just for fun" this one actually works (or, at least, appears to be working).
 
-### Here is a few examples of how does it work
+---
+
+### Here is a few examples of how does it work:
 
 ![Encode](ex1.png)
-![Decode](ex1.png)
+![Decode](ex2.png)
